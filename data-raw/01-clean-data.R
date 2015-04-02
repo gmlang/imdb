@@ -1,11 +1,8 @@
 rm(list=ls())
 library(dplyr)
 
-# # set paths
-# proj_path = "/Users/gmlang/openCPU/apps/film_da"
+# set paths
 data_path = file.path("data-raw", "movies.tab")
-# dir.create(file.path(proj_path, 'cleaned-data'), showWarnings = FALSE)
-# cleaned_path = file.path(proj_path, 'cleaned-data') 
         
 # read in data
 dat = read.delim2(data_path, header=TRUE, na.strings="", stringsAsFactors=FALSE)
