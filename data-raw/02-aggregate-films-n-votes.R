@@ -35,7 +35,4 @@ temp = merge(film_cnt, vote_cnt)
 # calculate average votes (per film) per year_cat
 films_n_votes_by_yearcat = temp %>% mutate(avg_votes = votes * 10^3 / films) # unit = thousand
 
-# save
-devtools::use_data(films_n_votes_by_year, films_n_votes_by_yearcat, 
-                   internal=TRUE)
 
