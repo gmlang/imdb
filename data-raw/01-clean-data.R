@@ -1,7 +1,9 @@
 rm(list=ls())
 library(dplyr)
+library(tidyr)
 
 # set paths
+setwd('~/openCPU/apps/imdb')
 data_path = file.path("data-raw", "movies.tab")
         
 # read in data

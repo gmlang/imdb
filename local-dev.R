@@ -19,6 +19,6 @@ http://localhost:2498/ocpu/tmp/x0d7d04c86e/R/.val
 http://localhost:2498/ocpu/tmp/x0dc57f94f3/info
 http://localhost:2498/ocpu/tmp/x0d0a8b773b/console
 http://localhost:2498/ocpu/tmp/x01efb582bf/stdout
-http://localhost:2498/ocpu/tmp/x07832bbf54/graphics/1/png
+http://localhost:2498/ocpu/tmp/x09a36e00c8/graphics/1/png
 http://localhost:2498/ocpu/tmp/x0b12271750/graphics/1/pdf
 http://localhost:2498/ocpu/tmp/x09ee972d26/files/plt.png

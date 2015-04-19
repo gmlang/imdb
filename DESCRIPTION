@@ -6,7 +6,4 @@ Description: What the package does (one paragraph)
 Depends: R (>= 3.1.2)
 License: MIT
 LazyData: true
-Imports: cabaceo,
-    ggplot2,
-    dplyr,
-    tidyr
+Imports: ezplot

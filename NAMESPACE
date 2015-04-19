@@ -2,3 +2,4 @@
 
 export(plot_budget_n_boxoffice)
 export(plot_films_n_votes)
+export(plot_ratings)

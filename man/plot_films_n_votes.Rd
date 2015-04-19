@@ -2,7 +2,7 @@
 % Please edit documentation in R/01-films-n-votes.R
 \name{plot_films_n_votes}
 \alias{plot_films_n_votes}
-\title{Generate some descriptive plots for film and vote counts over the years}
+\title{Generate descriptive plots for film and vote counts}
 \usage{
 plot_films_n_votes()
 }
@@ -10,6 +10,6 @@ plot_films_n_votes()
 6 ggplot2 plots
 }
 \description{
-Generate some descriptive plots for film and vote counts over the years
+Generate descriptive plots for film and vote counts
 }
 

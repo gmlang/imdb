@@ -1,6 +1,3 @@
-# # set paths and source setup script
-# help_path = "data-raw/helper"
-# source(file.path(help_path, "descriptive-analysis-setup.R"))
 
 # calculate budget sum and boxoffice sum by year
 btbo_tot = dat[, c("year", "budget", "boxoffice")] %>% group_by(year) %>% 

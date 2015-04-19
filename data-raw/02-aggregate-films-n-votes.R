@@ -1,8 +1,10 @@
 rm(list=ls())
+library(dplyr)
+library(tidyr)
 
-# set paths and source setup script
-help_path = "data-raw/helper"
-source(file.path(help_path, "descriptive-analysis-setup.R"))
+# set working directory and load data
+setwd('~/openCPU/apps/imdb')
+load("data/dat.rda")
 
 # count films by year
 film_cnt = as.data.frame(table(dat$year))
