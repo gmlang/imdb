@@ -12,19 +12,21 @@ plot_budget_n_boxoffice = function() {
         
         # plot distributions of budget over the years
         title1 = "Distribution of Budget (1913 - 2014)"
-        p = plt("year", "budget", ylab="budget", main=title1, ylog10=T)
-        p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
-                                            breaks = seq(start, end, 10))
-        p = ezplot::web_display(p)
+#         p = plt("year", "budget", ylab="budget", main=title1, ylog10=T)
+#         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
+#                                             breaks = seq(start, end, 10))
+        p = plt("year_cat", "budget", ylab="boxoffice", main=title1, ylog10=T)
+        p = ezplot::web_display(p, legend_pos="none")
         print(p)
         
         # plot distributions of boxoffice over the years
         title2 = "Distribution of Boxoffice (1913 - 2014)"
-        p = plt("year", "boxoffice", ylab="boxoffice", main=title2, ylog10=T)
-        p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
-                                            breaks = seq(start, end, 10))
-        p = ezplot::web_display(p)
-        print(p)
+#         p = plt("year", "boxoffice", ylab="boxoffice", main=title2, ylog10=T)
+#         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
+#                                             breaks = seq(start, end, 10))
+        p = plt("year_cat", "boxoffice", ylab="boxoffice", main=title2, ylog10=T)
+        p = ezplot::web_display(p, legend_pos="none")
+        print(p)        
         
         # make function to plot by_year data
         plt = ezplot::mk_lineplot(btbo_by_year)
