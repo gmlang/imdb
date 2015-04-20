@@ -1,6 +1,7 @@
 #' @title Generate descriptive plots for film and vote counts
 #' 
-#' @return 6 ggplot2 plots
+#' @param NULL
+#' @return 6 ggplot2 objects
 #' @export
 plot_films_n_votes = function() {
         t0 = proc.time()

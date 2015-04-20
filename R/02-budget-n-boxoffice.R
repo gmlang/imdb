@@ -1,9 +1,13 @@
-#' Generate some descriptive plots for budget and boxoffice over the years
+#' @title Generate descriptive plots for budget and boxoffice
 #' 
+#' @param NULL
 #' @return 8 ggplot2 plots
 #' @export
 plot_budget_n_boxoffice = function() {
         t0 = proc.time()
+        
+        # use color-blind friendly palettes
+        cbPalette = palette("cb_gray")
         
         # create function to do boxplot 
         plt = ezplot::mk_boxplot(dat)
@@ -15,7 +19,8 @@ plot_budget_n_boxoffice = function() {
 #         p = plt("year", "budget", ylab="budget", main=title1, ylog10=T)
 #         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
 #                                             breaks = seq(start, end, 10))
-        p = plt("year_cat", "budget", ylab="boxoffice", main=title1, ylog10=T)
+        p = plt("year_cat", "budget", ylab="boxoffice", main=title1, ylog10=T) +
+                ggplot2::scale_fill_manual(values=cbPalette)
         p = ezplot::web_display(p, legend_pos="none")
         print(p)
         
@@ -24,7 +29,8 @@ plot_budget_n_boxoffice = function() {
 #         p = plt("year", "boxoffice", ylab="boxoffice", main=title2, ylog10=T)
 #         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
 #                                             breaks = seq(start, end, 10))
-        p = plt("year_cat", "boxoffice", ylab="boxoffice", main=title2, ylog10=T)
+        p = plt("year_cat", "boxoffice", ylab="boxoffice", main=title2, 
+                ylog10=T) + ggplot2::scale_fill_manual(values=cbPalette)
         p = ezplot::web_display(p, legend_pos="none")
         print(p)        
         

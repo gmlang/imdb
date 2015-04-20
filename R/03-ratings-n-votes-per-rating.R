@@ -1,13 +1,13 @@
-#' Generate some descriptive plots for budget and boxoffice over the years
+#' @title Generate descriptive plots for ratings and votes per rating
 #' 
-#' @return ggplot2 plots
+#' @return ggplot2 objects
 #' @export
 plot_ratings = function() {
         t0 = proc.time()
         
         # plot stacked barcharts to show the distribution of votes 
         # for each rating r1-10
-        plt = mk_stacked_barplt(votes_per_rating)
+        plt = mk_barplot(votes_per_rating)
         p = plt("rating", "val", "votes", legend=lookup, 
                 main="Distribution of Votes for Each Rating")
         print(p)
