@@ -2,14 +2,14 @@
 % Please edit documentation in R/03-ratings-n-votes-per-rating.R
 \name{plot_ratings}
 \alias{plot_ratings}
-\title{Generate some descriptive plots for budget and boxoffice over the years}
+\title{Generate descriptive plots for ratings and votes per rating}
 \usage{
 plot_ratings()
 }
 \value{
-ggplot2 plots
+3 ggplot2 objects
 }
 \description{
-Generate some descriptive plots for budget and boxoffice over the years
+Generate descriptive plots for ratings and votes per rating
 }
 

@@ -6,8 +6,11 @@
 \usage{
 plot_films_n_votes()
 }
+\arguments{
+\item{NULL}{}
+}
 \value{
-6 ggplot2 plots
+6 ggplot2 objects
 }
 \description{
 Generate descriptive plots for film and vote counts

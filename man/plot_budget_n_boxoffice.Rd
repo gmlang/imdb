@@ -2,14 +2,17 @@
 % Please edit documentation in R/02-budget-n-boxoffice.R
 \name{plot_budget_n_boxoffice}
 \alias{plot_budget_n_boxoffice}
-\title{Generate some descriptive plots for budget and boxoffice over the years}
+\title{Generate descriptive plots for budget and boxoffice}
 \usage{
 plot_budget_n_boxoffice()
+}
+\arguments{
+\item{NULL}{}
 }
 \value{
 8 ggplot2 plots
 }
 \description{
-Generate some descriptive plots for budget and boxoffice over the years
+Generate descriptive plots for budget and boxoffice
 }
 
