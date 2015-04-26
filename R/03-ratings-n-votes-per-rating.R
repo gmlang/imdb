@@ -9,15 +9,16 @@ plot_ratings = function() {
         # for each rating r1-10
         plt = ezplot::mk_barplot(votes_per_rating)
         title1 = "Distribution of Votes at Each Rating r1-10 (1913-2014)"
-        p = plt("rating", "val", "votes", ypct=T, main=title1) +
-                ggplot2::scale_fill_brewer(palette="Spectral")
+        p = plt("rating", "val", "votes", main=title1) 
+        p = ezplot::scale_axis(p, "y", use_pct=T)
+        p = p + ggplot2::scale_fill_brewer(palette="Spectral")
         p = ezplot::web_display(p, legend_title=F)
         print(p)
         
         # plot ratings distribution
         plt = ezplot::mk_distplot(dat)
         title2 = "Distribution of Ratings (1913-2014)"
-        p = plt("rating", binw=0.3, main=title2) 
+        p = plt("rating", binw=0.3, main=title2, add_vline_mean=T) 
         p = ezplot::web_display(p)
         print(p)
         

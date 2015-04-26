@@ -52,7 +52,8 @@ plot_films_n_votes = function() {
         p = plt("year", "films", ylab = "number of films", main=title4,
                 linew=1.2, pt_size=3)
         p = p + ggplot2::scale_y_continuous(limits = c(ymin, ymax), 
-                                breaks = c(ymin, seq(1000, 4000, 1000), ymax))
+                                breaks = c(ymin, seq(1000, 4000, 1000), ymax),
+                                labels = scales::comma)
         p = ezplot::web_display(p)
         print(p)
         
