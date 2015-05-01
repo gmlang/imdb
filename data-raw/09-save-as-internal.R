@@ -2,7 +2,8 @@
 devtools::use_data(films_n_votes_by_year, films_n_votes_by_yearcat,
                    btbo_by_year, bo_bt_ratio_by_year, 
                    btbo_by_yearcat, bo_bt_ratio_by_yearcat, votes_per_rating,
-                   rating_stats_by_year,
+                   rating_stats_by_year, films_by_genre, top5genres_by_yearcat,
+                   top_genres_by_year_long,
                    internal=TRUE, overwrite=TRUE)
 
 

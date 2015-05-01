@@ -2,5 +2,6 @@
 
 export(plot_budget_n_boxoffice)
 export(plot_films_n_votes)
+export(plot_genre)
 export(plot_length_n_mpaa)
 export(plot_ratings)
