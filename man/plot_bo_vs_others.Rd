@@ -2,14 +2,14 @@
 % Please edit documentation in R/06-boxoffice-vs-other-vars.R
 \name{plot_bo_vs_others}
 \alias{plot_bo_vs_others}
-\title{Generate descriptive plots for genres}
+\title{Generate exploratory plots for boxoffice vs. other variables}
 \usage{
 plot_bo_vs_others()
 }
 \value{
-3 ggplot2 objects
+ggplot2 objects
 }
 \description{
-Generate descriptive plots for genres
+Generate exploratory plots for boxoffice vs. other variables
 }
 

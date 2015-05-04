@@ -1,6 +1,6 @@
-#' @title Generate descriptive plots for genres
+#' @title Generate exploratory plots for boxoffice vs. other variables
 #' 
-#' @return 3 ggplot2 objects
+#' @return 14 ggplot2 objects
 #' @export
 plot_bo_vs_others = function() {
         t0 = proc.time()
