@@ -58,7 +58,7 @@ plot_bo_bt_ratio_vs_others = function() {
         # plot bo_bt_ratio vs. mpaa
         title5 = "Boxoffice/Budget Ratio vs. MPAA (1913-2014)"
         p = plt("mpaa", "bo_bt_ratio", ylab="boxoffice/budget ratio", 
-                main=title5, legend=T)
+                main=title5, legend=F)
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::web_display(p)
         print(p)
@@ -71,8 +71,8 @@ plot_bo_bt_ratio_vs_others = function() {
         names(titles) = genres
         for (genre_var in genres) {        
                 title = paste("Boxoffice vs.", genre_var, "(1913-2014)")
-                p = plt(genre_var, "bo_bt_ratio", ylab="boxoffice/budget ratio", 
-                        main=title, legend=T)
+                p = plt(genre_var, "bo_bt_ratio", xlab = genre_var,
+                        ylab="boxoffice/budget ratio", main=title, legend=F)
                 p = ezplot::scale_axis(p, use_log10=T)
                 p = ezplot::web_display(p)
                 print(p)

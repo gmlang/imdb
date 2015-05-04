@@ -42,8 +42,8 @@ plot_bo_vs_others = function() {
         
         # plot boxoffice vs. mpaa
         title4 = "Boxoffice vs. MPAA (1913-2014)"
-        p = plt("mpaa", "boxoffice", ylab="boxoffice (in US Dollars)", main=title4, 
-                legend=T)
+        p = plt("mpaa", "boxoffice", ylab="boxoffice (in US Dollars)", 
+                main=title4, legend=F)
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::web_display(p)
         print(p)
@@ -56,8 +56,8 @@ plot_bo_vs_others = function() {
         names(titles) = genres
         for (genre_var in genres) {        
                 title = paste("Boxoffice vs.", genre_var, "(1913-2014)")
-                p = plt(genre_var, "boxoffice", ylab="boxoffice (in US Dollars)", 
-                        main=title, legend=T)
+                p = plt(genre_var, "boxoffice", xlab = genre_var,
+                        ylab="boxoffice (in US Dollars)", main=title, legend=F)
                 p = ezplot::scale_axis(p, use_log10=T)
                 p = ezplot::web_display(p)
                 print(p)
