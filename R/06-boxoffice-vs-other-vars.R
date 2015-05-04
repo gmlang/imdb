@@ -10,35 +10,31 @@ plot_bo_vs_others = function() {
         
         # plot boxoffice vs. budget
         title1 = "Boxoffice vs. Budget (1913-2014)"
-        p = plt("budget", "boxoffice", xlab="budget (in US Dollars)", main=title1,
-                ylab="boxoffice (in US Dollars)", pt_size=1.5, pt_alpha=0.7)
+        p = plt("budget", "boxoffice", xlab="budget (in US Dollars)", 
+                main=title1, ylab="boxoffice (in US Dollars)", pt_size=1.5, 
+                pt_alpha=0.7, add_line=T)
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::scale_axis(p, "x", use_log10=T)
         p = ezplot::web_display(p)
-        p = p + ggplot2::geom_smooth(method="lm", se=T, 
-                                     color=ezplot::palette("cb_black")[2])
         print(p)
         
         # plot boxoffice vs. votes
         title2 = "Boxoffice vs. Votes (1913-2014)"
         p = plt("votes", "boxoffice", xlab="number of votes", main=title2, 
-                ylab="boxoffice (in US Dollars)", pt_size=1.5, pt_alpha=0.7)
+                ylab="boxoffice (in US Dollars)", pt_size=1.5, pt_alpha=0.7,
+                add_line=T)
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::scale_axis(p, "x", use_log10=T)
         p = ezplot::web_display(p)
-        p = p + ggplot2::geom_smooth(method="lm", se=T, 
-                                     color=ezplot::palette("cb_black")[2])
         print(p)
         
         # plot boxoffice vs. rating
         title3 = "Boxoffice vs. Rating (1913-2014)"
-        p = plt("rating", "boxoffice", ylab="boxoffice (in US Dollars)", main=title3, 
+        p = plt("rating", "boxoffice", ylab="boxoffice (in US Dollars)", 
                 xlab="average imdb user rating (the higher, the better)", 
-                pt_size=1.5, pt_alpha=0.7)
+                main=title3, pt_size=1.5, pt_alpha=0.7, add_line=T)
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::web_display(p)
-        p = p + ggplot2::geom_smooth(method="lm", se=T, 
-                                     color=ezplot::palette("cb_black")[2])
         print(p)
         
         # create function to do boxplot
