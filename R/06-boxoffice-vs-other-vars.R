@@ -75,7 +75,10 @@ plot_bo_vs_others = function() {
         
         # create data.frame to hold plots title and index
         plt_titles = c(title1, title2, title3, titles)
-        plts = data.frame(tab="bo_vs_others", title=plt_titles, 
+        plt_tabs = c("Boxoffice vs. Budget", "Boxoffice vs. Votes", 
+                     "Boxoffice vs. Rating", "Boxoffice vs. MPAA", 
+                     rep("Boxoffice vs. Genre", length(titles)))
+        plts = data.frame(tab=plt_tabs, title=plt_titles, 
                           n=1:length(plt_titles), has_caption=FALSE, caption="")
         
         # collect into out

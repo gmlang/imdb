@@ -44,8 +44,9 @@ plot_bo_bt_ratio_vs_others = function() {
         print(p)
         
         # plot bo_bt_ratio vs. rating
-        title4 = "Boxoffice vs. Rating (1913-2014)"
-        p = plt("rating", "bo_bt_ratio", ylab="boxoffice/budget ratio", 
+        title4 = "Boxoffice/Budget Ratio vs. Rating (1913-2014)"
+        p = plt("rating", "bo_bt_ratio", fillby = "made_money", 
+                ylab="boxoffice/budget ratio", 
                 xlab="average imdb user rating (the higher, the better)",
                 main=title4, pt_size=1.5, pt_alpha=0.7, add_line=T)
         p = ezplot::scale_axis(p, use_log10=T)
@@ -70,7 +71,7 @@ plot_bo_bt_ratio_vs_others = function() {
         titles = rep(NA, length(genres))
         names(titles) = genres
         for (genre_var in genres) {        
-                title = paste("Boxoffice vs.", genre_var, "(1913-2014)")
+                title = paste("Boxoffice/Budget Ratio vs.", genre_var, "(1913-2014)")
                 p = plt(genre_var, "bo_bt_ratio", xlab = genre_var,
                         ylab="boxoffice/budget ratio", main=title, legend=F)
                 p = ezplot::scale_axis(p, use_log10=T)
@@ -91,7 +92,11 @@ plot_bo_bt_ratio_vs_others = function() {
         
         # create data.frame to hold plots title and index
         plt_titles = c(title1, title2, title3, title4, title5, titles)
-        plts = data.frame(tab="bo_bt_ratio_vs_others", title=plt_titles, 
+        plt_tabs = c("Boxoffice/Budget Ratio", "Boxoffice/Budget vs. Budget", 
+                     "Boxoffice/Budget vs. Votes", "Boxoffice/Budget vs. Rating", 
+                     "Boxoffice/Budget vs. MPAA", 
+                     rep("Boxoffice/Budget vs. Genre", length(titles)))
+        plts = data.frame(tab=plt_tabs, title=plt_titles, 
                           n=1:length(plt_titles), has_caption=FALSE, caption="")
         
         # collect into out
