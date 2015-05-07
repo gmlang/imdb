@@ -34,7 +34,8 @@ plot_length_n_mpaa = function() {
         
         # create data.frame to hold plots title and index
         plt_titles = c(title1, title2)
-        plts = data.frame(tab="length-n-mpaa", title=plt_titles, 
+        plt_tabs = c("Film Lengths", "MPAA")
+        plts = data.frame(tab=plt_tabs, title=plt_titles, 
                           n=1:2, has_caption=FALSE, caption="")
         
         # collect into out

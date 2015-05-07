@@ -46,7 +46,8 @@ plot_genre = function() {
         
         # create data.frame to hold plots title and index
         plt_titles = c(title1, title2, title3)
-        plts = data.frame(tab="genre", title=plt_titles, 
+        plt_tabs = c("Genre")
+        plts = data.frame(tab=plt_tabss, title=plt_titles, 
                           n=1:3, has_caption=FALSE, caption="")
         
         # collect into out

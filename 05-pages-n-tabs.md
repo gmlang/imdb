@@ -10,10 +10,15 @@
 * Boxoffice/Budget Ratio
                      
 ## ratings
+* Distribution of Votes
+* Distribution of Ratings
 
 ## lengths & mpaa
+* Film Lengths
+* MPAA
 
 ## genres
+* Genre
 
 ## boxoffice vs. other vars
 
