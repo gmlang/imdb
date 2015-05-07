@@ -89,7 +89,9 @@ plot_films_n_votes = function() {
         
         # create data.frame to hold plots title and index
         plt_titles = c(title1, title2, title3, title4, title5, title6)
-        plts = data.frame(tab="films-n-votes", title=plt_titles, n=1:6, 
+        plt_tabs = c("Number of Films", "Number of Votes", "Average Number of Votes",
+                     "Number of Films", "Number of Votes", "Average Number of Votes")
+        plts = data.frame(tab=plt_tabs, title=plt_titles, n=1:6, 
                           has_caption=FALSE, caption="")
         
         # collect into out
