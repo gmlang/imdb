@@ -16,7 +16,7 @@ plot_budget_n_boxoffice = function() {
         
         # plot distributions of budget over the years
         title1 = "Distribution of Budget (1913 - 2014)"
-        p = plt("year_cat", "budget", ylab="boxoffice", main=title1) 
+        p = plt("year_cat", "budget", ylab="budget", main=title1) 
         p = ezplot::scale_axis(p, "y", use_log10=T) 
         p = p + ggplot2::scale_fill_manual(values=cbPalette)
         p = ezplot::web_display(p, legend_pos="none")
@@ -101,8 +101,10 @@ plot_budget_n_boxoffice = function() {
         # create data.frame to hold plots title and index
         plt_titles = c(title1, title2, title3, title4, title5, title6,
                        title7, title8)
-
-        plts = data.frame(tab="budget-n-boxoffice", title=plt_titles, n=1:8, 
+        plt_tabs = c("Distribution", "Distribution", "Total & Average", 
+                     "Total & Average", "Boxoffice/Budget Ratio", 
+                     "Total & Average", "Total & Average", "Boxoffice/Budget Ratio")
+        plts = data.frame(tab=plt_tabs, title=plt_titles, n=1:8, 
                           has_caption=FALSE, caption="")
         
         # collect into out

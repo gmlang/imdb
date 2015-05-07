@@ -7,7 +7,7 @@
 plot_bo_vs_others()
 }
 \value{
-ggplot2 objects
+14 ggplot2 objects
 }
 \description{
 Generate exploratory plots for boxoffice vs. other variables

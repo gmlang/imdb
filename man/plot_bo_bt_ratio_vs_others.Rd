@@ -7,7 +7,7 @@
 plot_bo_bt_ratio_vs_others()
 }
 \value{
-ggplot2 objects
+15 ggplot2 objects
 }
 \description{
 Generate exploratory plots for boxoffice/budget ratio vs. other variables
