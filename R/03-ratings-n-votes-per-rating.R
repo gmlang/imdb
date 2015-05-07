@@ -55,8 +55,9 @@ plot_ratings = function() {
         
         # create data.frame to hold plots title and index
         plt_titles = c(title1, title2, title3, title4)
-
-        plts = data.frame(tab="rating-n-votes-per-rating", title=plt_titles, 
+        plt_tabs = c("Distribution of Votes", "Distribution of Ratings",
+                     "Distribution of Ratings", "Distribution of Ratings")
+        plts = data.frame(tab=plt_tabs, title=plt_titles, 
                           n=1:4, has_caption=FALSE, caption="")
         
         # collect into out
