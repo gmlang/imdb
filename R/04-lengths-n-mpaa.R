@@ -17,9 +17,13 @@ plot_length_n_mpaa = function() {
         tbl = table(dat$mpaa)
         tbl = data.frame(prop.table(tbl))
         names(tbl) = c("cat", "pct")
+        f = ezplot::add_bar_label_pos(tbl)
+        tbl = f("cat", "pct", vpos=0.03)
         plt = ezplot::mk_barplot(tbl)
         title2 = "Percent of Different MPAA Ratings"
-        p = plt("cat", "pct", fillby="cat", main=title2, legend=F)
+        p = plt("cat", "pct", fillby="cat", main=title2, legend=F,
+                label_bars=T, labelvar="pct", posvar = "pos_top", label_size=6,
+                is_label_pct=T)
         p = ezplot::scale_axis(p, "y", use_pct=T, pct_jump=0.25)
         p = ezplot::web_display(p)
         print(p)
