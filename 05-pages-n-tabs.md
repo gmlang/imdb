@@ -20,14 +20,14 @@
 ## genres
 * Genre
 
-## boxoffice vs. other vars
+## boxoffice
 * Boxoffice vs. Budget
 * Boxoffice vs. Votes
 * Boxoffice vs. Rating
 * Boxoffice vs. MPAA
 * Boxoffice vs. Genre
 
-## boxoffice budget ratio vs. other vars
+## boxoffice/budget
 * Boxoffice/Budget Ratio
 * Boxoffice/Budget vs. Budget
 * Boxoffice/Budget vs. Votes
