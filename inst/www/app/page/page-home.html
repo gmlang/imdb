@@ -1,0 +1,56 @@
+<!-- Partial HTML for Home Page -->
+<div class="container-fluid">
+
+    <div class="page-header">
+        <h1>IMDB Analysis</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 well">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <p><a href="http://imdb.com/">IMDB</a> is a website for collecting film data supplied by studios and fans. It claims to be the biggest movie database on the web, and it makes their data publicly <a href="http://www.imdb.com/interfaces/">available for download</a>.
+                    We used <a href="https://github.com/hadley/data-movies">Hadley Wickham&#8217;s ruby scripts</a> (with some small modifications) to download data from IMDB and parse them into useful form for data analysis.
+                    The final output is one tidy data set that contains 5944 films from 1913 - 2014 and the following fields:</p>
+
+                <ul>
+                    <li>title. Title of the movie.</li>
+                    <li>year. Year of release.</li>
+                    <li>budget. Total budget in US dollars.</li>
+                    <li>length. Length in minutes.</li>
+                    <li>rating. Average IMDB user rating. These ratings are on a scale of 1 (worst) to 10 (best).</li>
+                    <li>votes. Number of IMDB users who rated this movie.</li>
+                    <li>r1&#8211;10. Distribution of votes for each rating, to mid point of nearest decile: 0 = no votes, 4.5 = 1&#8211;9 votes, 14.5 = 11&#8211;19 of votes, etc. Due to rounding errors these may not sum to 100.</li>
+                    <li>mpaa. MPAA rating (ex: R, PG&#8211;13).</li>
+                    <li>boxoffice. Total Ticket sales in US dollars.</li>
+                    <li>actor, actress, director, and writer. String variables giving these people&#8217;s names.</li>
+                    <li>action, animation, comedy, drama, documentary, romance, short, and etc. Binary variables representing if movie was classified as belonging to that genre.</li>
+                </ul>
+
+                <p>We thoroughly analyzed the data set and made this web app to present our findings. In particular, we looked at</p>
+
+                <ul>
+                    <li>How the number of films made and user votes change over the years.</li>
+                    <li>How budget and boxoffice change over the years.</li>
+                </ul>
+
+                <p>We hope you find these discoveries interesting. You can find out more about us at <a href="http://cabaceo.com">cabaceo.com</a>.</p>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- phphc -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:100%;height:90px"
+                     data-ad-client="ca-pub-8728996999064894"
+                     data-ad-slot="6362974564"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!--<button class="btn btn-primary" id="submit_button" ng-click="plotFimsAndVotes()">-->
+                    <!--<i class="glyphicon glyphicon-ok"></i>-->
+                    <!--Run-->
+                <!--</button>-->
+            </div>
+        </div>
+    </div>
+
+</div>

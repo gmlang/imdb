@@ -1,0 +1,29 @@
+body {
+    font-family: "Open Sans", "Helvetica Neue","Arial", "Georgia", "Baskerville";
+    padding-bottom: 70px;
+}
+
+.page-header {
+    margin-top: 10px;
+}
+
+.page-header h1{
+    margin-top: 0px;
+}
+
+.table-div h3 {
+    margin-top: 0px;
+}
+
+.opencpu-caption {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.ads-div {
+    margin-top: 20px;
+}
+
+pre {
+    text-align:center;
+}
