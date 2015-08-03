@@ -22,8 +22,8 @@ plot_length_n_mpaa = function() {
         plt = ezplot::mk_barplot(tbl)
         title2 = "Percent of Different MPAA Ratings"
         p = plt("cat", "pct", fillby="cat", main=title2, legend=F,
-                label_bars=T, labelvar="pct", posvar = "pos_top", label_size=6,
-                is_label_pct=T)
+                barlab="pct", barlab_use_pct=T, decimals=2,
+                barlab_at_top=T, barlab_size=6)
         p = ezplot::scale_axis(p, "y", use_pct=T, pct_jump=0.25)
         p = ezplot::web_display(p)
         print(p)

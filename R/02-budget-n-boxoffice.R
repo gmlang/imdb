@@ -7,7 +7,7 @@ plot_budget_n_boxoffice = function() {
         t0 = proc.time()
         
         # use color-blind friendly palettes
-        cbPalette = ezplot::palette("cb_gray")
+        cbPalette = ezplot::cb_color("cb_gray")
         
         # create function to do boxplot 
         plt = ezplot::mk_boxplot(dat)

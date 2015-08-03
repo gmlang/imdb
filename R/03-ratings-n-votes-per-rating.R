@@ -37,7 +37,7 @@ plot_ratings = function() {
         
         # plot distributions of ratings over the years
         plt = ezplot::mk_boxplot(dat)
-        cbPalette = ezplot::palette("cb_gray") # use color-blind friendly palettes
+        cbPalette = ezplot::cb_color("cb_gray") # use color-blind friendly palettes
         title4 = "Distribution of Ratings Aggregated for 4 Periods (1913-2014)"
         p = plt("year_cat", "rating", ylab="rating", main=title4) +
                 ggplot2::scale_fill_manual(values=cbPalette)
