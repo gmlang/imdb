@@ -9,6 +9,13 @@ plot_bo_bt_ratio_vs_others = function() {
         start = min(dat$year)
         end = max(dat$year)
         
+        # get color-blind friendly colors
+        purple = cb_color("reddish_purple")
+        green = cb_color("bluish_green")
+        red = cb_color("vermilion")
+        blue = cb_color("blue")
+        orange = cb_color("orange")
+        
         # create function to do scatter plot
         plt = ezplot::mk_scatterplot(dat)
         
@@ -17,6 +24,7 @@ plot_bo_bt_ratio_vs_others = function() {
         p = plt("year", "bo_bt_ratio", fillby = "made_money", main=title1,
                 ylab = "boxoffice/budget ratio", pt_size=1.5, pt_alpha=0.7, 
                 add_line=T)
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::web_display(p)
         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
@@ -28,6 +36,7 @@ plot_bo_bt_ratio_vs_others = function() {
         p = plt("budget", "bo_bt_ratio", fillby = "made_money", main=title2,
                 xlab="budget (in US Dollars)", ylab="boxoffice/budget ratio", 
                 pt_size=1.5, pt_alpha=0.7, add_line=T)
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::scale_axis(p, "x", use_log10=T)
         p = ezplot::web_display(p)
@@ -38,6 +47,7 @@ plot_bo_bt_ratio_vs_others = function() {
         p = plt("votes", "bo_bt_ratio", fillby = "made_money", main=title3, 
                 xlab="number of votes", ylab="boxoffice/budget ratio", 
                 pt_size=1.5, pt_alpha=0.7, add_line=T)
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::scale_axis(p, "x", use_log10=T)
         p = ezplot::web_display(p)
@@ -49,6 +59,7 @@ plot_bo_bt_ratio_vs_others = function() {
                 ylab="boxoffice/budget ratio", 
                 xlab="average imdb user rating (the higher, the better)",
                 main=title4, pt_size=1.5, pt_alpha=0.7, add_line=T)
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::web_display(p)
         print(p)
@@ -60,6 +71,8 @@ plot_bo_bt_ratio_vs_others = function() {
         title5 = "Boxoffice/Budget Ratio vs. MPAA (1913-2014)"
         p = plt("mpaa", "bo_bt_ratio", ylab="boxoffice/budget ratio", 
                 main=title5, legend=F)
+        p = p + ggplot2::scale_fill_manual(values = c(purple, green, red, 
+                                                      blue, orange))
         p = ezplot::scale_axis(p, use_log10=T)
         p = ezplot::web_display(p)
         print(p)
@@ -74,6 +87,7 @@ plot_bo_bt_ratio_vs_others = function() {
                 title = paste("Boxoffice/Budget Ratio vs.", genre_var, "(1913-2014)")
                 p = plt(genre_var, "bo_bt_ratio", xlab = genre_var,
                         ylab="boxoffice/budget ratio", main=title, legend=F)
+                p = p + ggplot2::scale_fill_manual(values = c(purple, green))
                 p = ezplot::scale_axis(p, use_log10=T)
                 p = ezplot::web_display(p)
                 print(p)
