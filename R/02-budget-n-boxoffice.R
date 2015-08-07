@@ -17,7 +17,7 @@ plot_budget_n_boxoffice = function() {
         # plot distributions of budget over the years
         title1 = "Distribution of Budget (1913 - 2014)"
         p = plt("year_cat", "budget", ylab="budget", main=title1) 
-        p = ezplot::scale_axis(p, "y", use_log10=T) 
+        p = ezplot::scale_axis(p, "y", scale="log10") 
         p = p + ggplot2::scale_fill_manual(values=cbPalette)
         p = ezplot::web_display(p, legend_pos="none")
         print(p)
@@ -25,7 +25,7 @@ plot_budget_n_boxoffice = function() {
         # plot distributions of boxoffice over the years
         title2 = "Distribution of Boxoffice (1913 - 2014)"
         p = plt("year_cat", "boxoffice", ylab="boxoffice", main=title2) 
-        p = ezplot::scale_axis(p, "y", use_log10=T) 
+        p = ezplot::scale_axis(p, "y", scale="log10") 
         p = p + ggplot2::scale_fill_manual(values=cbPalette)
         p = ezplot::web_display(p, legend_pos="none")
         print(p)        
@@ -56,7 +56,7 @@ plot_budget_n_boxoffice = function() {
         title5 = "Boxoffice/Budget Ratio (1913 - 2014)"
         p = plt("year", "bo_bt_ratio", ylab="boxoffice/budget ratio", 
                 main=title5, linew=1.2, pt_size=3)
-        p = ezplot::scale_axis(p, "y", use_log10=T)
+        p = ezplot::scale_axis(p, "y", scale="log10"=T)
         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
                                             breaks = seq(start, end, 10))
         p = ezplot::web_display(p)
