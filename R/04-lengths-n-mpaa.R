@@ -9,7 +9,7 @@ plot_length_n_mpaa = function() {
         plt = ezplot::mk_distplot(dat)
         title1 = "Distribution of Film Lengths"
         p = plt("length", xlab="minutes", main=title1, add_vline_mean=T)
-        p = ezplot::scale_axis(p, "y", use_comma=T)
+        p = ezplot::scale_axis(p, "y", scale="comma")
         p = ezplot::web_display(p)
         print(p)
         
@@ -24,7 +24,7 @@ plot_length_n_mpaa = function() {
         p = plt("cat", "pct", fillby="cat", main=title2, legend=F,
                 barlab="pct", barlab_use_pct=T, decimals=2,
                 barlab_at_top=T, barlab_size=6)
-        p = ezplot::scale_axis(p, "y", use_pct=T, pct_jump=0.25)
+        p = ezplot::scale_axis(p, "y", scale="pct", pct_jump=0.25)
         p = ezplot::web_display(p)
         print(p)
                 

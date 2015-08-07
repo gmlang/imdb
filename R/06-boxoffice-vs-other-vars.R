@@ -20,8 +20,8 @@ plot_bo_vs_others = function() {
         p = plt("budget", "boxoffice", xlab="budget (in US Dollars)", 
                 main=title1, ylab="boxoffice (in US Dollars)", pt_size=1.5, 
                 pt_alpha=0.7, add_line=T)
-        p = ezplot::scale_axis(p, use_log10=T)
-        p = ezplot::scale_axis(p, "x", use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
+        p = ezplot::scale_axis(p, "x", scale="log10")
         p = ezplot::web_display(p)
         print(p)
         
@@ -30,8 +30,8 @@ plot_bo_vs_others = function() {
         p = plt("votes", "boxoffice", xlab="number of votes", main=title2, 
                 ylab="boxoffice (in US Dollars)", pt_size=1.5, pt_alpha=0.7,
                 add_line=T)
-        p = ezplot::scale_axis(p, use_log10=T)
-        p = ezplot::scale_axis(p, "x", use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
+        p = ezplot::scale_axis(p, "x", scale="log10")
         p = ezplot::web_display(p)
         print(p)
         
@@ -40,7 +40,7 @@ plot_bo_vs_others = function() {
         p = plt("rating", "boxoffice", ylab="boxoffice (in US Dollars)", 
                 xlab="average imdb user rating (the higher, the better)", 
                 main=title3, pt_size=1.5, pt_alpha=0.7, add_line=T)
-        p = ezplot::scale_axis(p, use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
         p = ezplot::web_display(p)
         print(p)
         
@@ -53,7 +53,7 @@ plot_bo_vs_others = function() {
                 main=title4, legend=F)
         p = p + ggplot2::scale_fill_manual(values = c(purple, green, red, 
                                                       blue, orange))
-        p = ezplot::scale_axis(p, use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
         p = ezplot::web_display(p)
         print(p)
         
@@ -68,7 +68,7 @@ plot_bo_vs_others = function() {
                 p = plt(genre_var, "boxoffice", xlab = genre_var,
                         ylab="boxoffice (in US Dollars)", main=title, legend=F)
                 p = p + ggplot2::scale_color_manual(values = c(purple, green))
-                p = ezplot::scale_axis(p, use_log10=T)
+                p = ezplot::scale_axis(p, scale="log10")
                 p = ezplot::web_display(p)
                 print(p)
                 

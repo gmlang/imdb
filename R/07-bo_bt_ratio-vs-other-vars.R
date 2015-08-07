@@ -25,7 +25,7 @@ plot_bo_bt_ratio_vs_others = function() {
                 ylab = "boxoffice/budget ratio", pt_size=1.5, pt_alpha=0.7, 
                 add_line=T)
         p = p + ggplot2::scale_color_manual(values = c(purple, green))
-        p = ezplot::scale_axis(p, use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
         p = ezplot::web_display(p)
         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
                                             breaks = seq(start, end, 10))
@@ -37,8 +37,8 @@ plot_bo_bt_ratio_vs_others = function() {
                 xlab="budget (in US Dollars)", ylab="boxoffice/budget ratio", 
                 pt_size=1.5, pt_alpha=0.7, add_line=T)
         p = p + ggplot2::scale_color_manual(values = c(purple, green))
-        p = ezplot::scale_axis(p, use_log10=T)
-        p = ezplot::scale_axis(p, "x", use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
+        p = ezplot::scale_axis(p, "x", scale="log10")
         p = ezplot::web_display(p)
         print(p)
         
@@ -48,8 +48,8 @@ plot_bo_bt_ratio_vs_others = function() {
                 xlab="number of votes", ylab="boxoffice/budget ratio", 
                 pt_size=1.5, pt_alpha=0.7, add_line=T)
         p = p + ggplot2::scale_color_manual(values = c(purple, green))
-        p = ezplot::scale_axis(p, use_log10=T)
-        p = ezplot::scale_axis(p, "x", use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
+        p = ezplot::scale_axis(p, "x", scale="log10")
         p = ezplot::web_display(p)
         print(p)
         
@@ -60,7 +60,7 @@ plot_bo_bt_ratio_vs_others = function() {
                 xlab="average imdb user rating (the higher, the better)",
                 main=title4, pt_size=1.5, pt_alpha=0.7, add_line=T)
         p = p + ggplot2::scale_color_manual(values = c(purple, green))
-        p = ezplot::scale_axis(p, use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
         p = ezplot::web_display(p)
         print(p)
         
@@ -73,7 +73,7 @@ plot_bo_bt_ratio_vs_others = function() {
                 main=title5, legend=F)
         p = p + ggplot2::scale_fill_manual(values = c(purple, green, red, 
                                                       blue, orange))
-        p = ezplot::scale_axis(p, use_log10=T)
+        p = ezplot::scale_axis(p, scale="log10")
         p = ezplot::web_display(p)
         print(p)
         
@@ -88,7 +88,7 @@ plot_bo_bt_ratio_vs_others = function() {
                 p = plt(genre_var, "bo_bt_ratio", xlab = genre_var,
                         ylab="boxoffice/budget ratio", main=title, legend=F)
                 p = p + ggplot2::scale_fill_manual(values = c(purple, green))
-                p = ezplot::scale_axis(p, use_log10=T)
+                p = ezplot::scale_axis(p, scale="log10")
                 p = ezplot::web_display(p)
                 print(p)
                 

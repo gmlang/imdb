@@ -9,7 +9,7 @@ plot_genre = function() {
         plt = ezplot::mk_barplot(films_by_genre)
         title1 = "Percent of Films by Genre"
         p = plt("genre", "pct", fillby="genre", main=title1, legend=F)
-        p = ezplot::scale_axis(p, use_pct=TRUE)
+        p = ezplot::scale_axis(p, scale="pct")
         p = ezplot::rotate_axis_text(p, text_angle_x=270, hjust_x=0, vjust_x=0)
         p = ezplot::web_display(p)
         print(p)
@@ -19,7 +19,7 @@ plot_genre = function() {
         title2 = "Percent of Top 5 Genres over 4 periods (1913-2014)"
         p = plt("year_cat", "pct", fillby="genre", main=title2)
         p = p + ggplot2::scale_fill_brewer(palette="Spectral")
-        p = ezplot::scale_axis(p, use_pct=T, pct_jump=0.2)
+        p = ezplot::scale_axis(p, scale="pct", pct_jump=0.2)
         p = ezplot::web_display(p)
         print(p)
         
