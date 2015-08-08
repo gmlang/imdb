@@ -6,8 +6,10 @@
 plot_budget_n_boxoffice = function() {
         t0 = proc.time()
         
-        # use color-blind friendly palettes
+        # get color-blind friendly colors
         cbPalette = ezplot::cb_color("cb_gray")
+        purple = ezplot::cb_color("reddish_purple")
+        green = ezplot::cb_color("bluish_green")
         
         # create function to do boxplot 
         plt = ezplot::mk_boxplot(dat)
@@ -37,6 +39,7 @@ plot_budget_n_boxoffice = function() {
         title3 = "Annual Total Budget and Boxoffice (1913 - 2014)"
         p = plt("year", "tot", "type", ylab="total amount ($billion)",
                 main=title3, linew=1.2, pt_size=3)
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
                                             breaks = seq(start, end, 10))
         p = ezplot::web_display(p, legend_title=F)
@@ -46,6 +49,7 @@ plot_budget_n_boxoffice = function() {
         title4 = "Annual Average Budget and Boxoffice (1913 - 2014)"
         p = plt("year", "avg", "type", ylab="average amount per film ($million)",
                 main=title4, linew=1.2, pt_size=3)
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
                                             breaks = seq(start, end, 10))
         p = ezplot::web_display(p, legend_title=F)
@@ -56,6 +60,7 @@ plot_budget_n_boxoffice = function() {
         title5 = "Boxoffice/Budget Ratio (1913 - 2014)"
         p = plt("year", "bo_bt_ratio", ylab="boxoffice/budget ratio", 
                 main=title5, linew=1.2, pt_size=3)
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = ezplot::scale_axis(p, "y", scale="log10")
         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
                                             breaks = seq(start, end, 10))
@@ -66,16 +71,18 @@ plot_budget_n_boxoffice = function() {
         plt = ezplot::mk_lineplot(btbo_by_yearcat)
         
         # plot total buget and boxoffice over year_cat
-        title6 = "Total Budget and Boxoffice Aggregated for 4 Periods (1913 - 2014)"
+        title6 = "Total Budget and Boxoffice for 4 Periods (1913 - 2014)"
         p = plt("year_cat", "tot", "type", main=title6, linew=1.2, pt_size=3,
                 ylab="total amount ($billion)")
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = ezplot::web_display(p, legend_title=F)
         print(p)
         
         # plot average buget and boxoffice over the years
-        title7 = "Average Budget and Boxoffice Aggregated for 4 Periods (1913 - 2014)"
+        title7 = "Average Budget and Boxoffice for 4 Periods (1913 - 2014)"
         p = plt("year_cat", "avg", "type", main=title7, linew=1.2, pt_size=3,
                 ylab="average amount per film ($million)")
+        p = p + ggplot2::scale_color_manual(values = c(purple, green))
         p = ezplot::web_display(p, legend_title=F)
         print(p)
         

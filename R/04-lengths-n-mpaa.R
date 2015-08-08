@@ -5,6 +5,12 @@
 plot_length_n_mpaa = function() {
         t0 = proc.time()
         
+        # get color-blind friendly colors
+        purple = ezplot::cb_color("reddish_purple")
+        green = ezplot::cb_color("bluish_green")
+        red = ezplot::cb_color("vermilion")
+        blue = ezplot::cb_color("blue")
+        
         # plot histogram to show the distribution of lengths
         plt = ezplot::mk_distplot(dat)
         title1 = "Distribution of Film Lengths"
@@ -24,6 +30,7 @@ plot_length_n_mpaa = function() {
         p = plt("cat", "pct", fillby="cat", main=title2, legend=F,
                 barlab="pct", barlab_use_pct=T, decimals=2,
                 barlab_at_top=T, barlab_size=6)
+        p = p + ggplot2::scale_color_manual(values = c(purple, green, red, blue))
         p = ezplot::scale_axis(p, "y", scale="pct", pct_jump=0.25)
         p = ezplot::web_display(p)
         print(p)
