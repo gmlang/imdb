@@ -56,7 +56,7 @@ plot_budget_n_boxoffice = function() {
         title5 = "Boxoffice/Budget Ratio (1913 - 2014)"
         p = plt("year", "bo_bt_ratio", ylab="boxoffice/budget ratio", 
                 main=title5, linew=1.2, pt_size=3)
-        p = ezplot::scale_axis(p, "y", scale="log10"=T)
+        p = ezplot::scale_axis(p, "y", scale="log10")
         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
                                             breaks = seq(start, end, 10))
         p = ezplot::web_display(p)
