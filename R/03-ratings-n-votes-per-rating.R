@@ -11,7 +11,7 @@ plot_ratings = function() {
         title1 = "Distribution of Votes at Each Rating r1-10 (1913-2014)"
         p = plt("rating", "val", "votes", main=title1) 
         p = ezplot::scale_axis(p, "y", scale="pct")
-        p = p + ggplot2::scale_fill_brewer(palette="Spectral")
+        p = p + ggplot2::scale_fill_brewer(palette="Blues")
         p = ezplot::web_display(p, legend_title=F)
         print(p)
         
