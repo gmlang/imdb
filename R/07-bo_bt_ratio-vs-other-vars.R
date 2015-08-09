@@ -14,7 +14,7 @@ plot_bo_bt_ratio_vs_others = function() {
         green = ezplot::cb_color("bluish_green")
         red = ezplot::cb_color("vermilion")
         blue = ezplot::cb_color("blue")
-        orange = ezplot::cb_color("orange")
+        # orange = ezplot::cb_color("orange")
         
         # create function to do scatter plot
         plt = ezplot::mk_scatterplot(dat)
@@ -71,8 +71,7 @@ plot_bo_bt_ratio_vs_others = function() {
         title5 = "Boxoffice/Budget Ratio vs. MPAA (1913-2014)"
         p = plt("mpaa", "bo_bt_ratio", ylab="boxoffice/budget ratio", 
                 main=title5, legend=F)
-        p = p + ggplot2::scale_fill_manual(values = c(purple, green, red, 
-                                                      blue, orange))
+        p = p + ggplot2::scale_fill_manual(values = c(purple, green, red, blue))
         p = ezplot::scale_axis(p, scale="log10")
         p = ezplot::web_display(p)
         print(p)
