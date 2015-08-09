@@ -18,7 +18,7 @@ plot_genre = function() {
         plt = ezplot::mk_barplot(top5genres_by_yearcat)
         title2 = "Percent of Top 5 Genres over 4 periods (1913-2014)"
         p = plt("year_cat", "pct", fillby="genre", main=title2)
-        p = p + ggplot2::scale_fill_brewer(palette="Spectral")
+        p = p + ggplot2::scale_fill_brewer(palette="Blues")
         p = ezplot::scale_axis(p, scale="pct", pct_jump=0.2)
         p = ezplot::web_display(p)
         print(p)
@@ -32,7 +32,7 @@ plot_genre = function() {
         end = max(top_genres_by_year_long$year)
         p = p + ggplot2::scale_x_continuous(limits = c(start, end), 
                                             breaks = seq(start, end, 10)) + 
-                ggplot2::scale_color_brewer(palette="Spectral")
+                ggplot2::scale_color_brewer(palette="Blues")
         p = ezplot::web_display(p)
         print(p)
         
