@@ -10,7 +10,7 @@ plot_bo_vs_others = function() {
         green = ezplot::cb_color("bluish_green")
         red = ezplot::cb_color("vermilion")
         blue = ezplot::cb_color("blue")
-        orange = ezplot::cb_color("orange")
+        # orange = ezplot::cb_color("orange")
         
         # create function to do scatter plot
         plt = ezplot::mk_scatterplot(dat)
@@ -51,8 +51,7 @@ plot_bo_vs_others = function() {
         title4 = "Boxoffice vs. MPAA (1913-2014)"
         p = plt("mpaa", "boxoffice", ylab="boxoffice (in US Dollars)", 
                 main=title4, legend=F)
-        p = p + ggplot2::scale_fill_manual(values = c(purple, green, red, 
-                                                      blue, orange))
+        p = p + ggplot2::scale_fill_manual(values = c(purple, green, red, blue))
         p = ezplot::scale_axis(p, scale="log10")
         p = ezplot::web_display(p)
         print(p)
@@ -67,7 +66,7 @@ plot_bo_vs_others = function() {
                 title = paste("Boxoffice vs.", genre_var, "(1913-2014)")
                 p = plt(genre_var, "boxoffice", xlab = genre_var,
                         ylab="boxoffice (in US Dollars)", main=title, legend=F)
-                p = p + ggplot2::scale_color_manual(values = c(purple, green))
+                p = p + ggplot2::scale_fill_manual(values = c(purple, green))
                 p = ezplot::scale_axis(p, scale="log10")
                 p = ezplot::web_display(p)
                 print(p)
