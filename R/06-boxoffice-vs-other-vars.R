@@ -6,11 +6,11 @@ plot_bo_vs_others = function() {
         t0 = proc.time()
         
         # get color-blind friendly colors
-        purple = cb_color("reddish_purple")
-        green = cb_color("bluish_green")
-        red = cb_color("vermilion")
-        blue = cb_color("blue")
-        orange = cb_color("orange")
+        purple = ezplot::cb_color("reddish_purple")
+        green = ezplot::cb_color("bluish_green")
+        red = ezplot::cb_color("vermilion")
+        blue = ezplot::cb_color("blue")
+        orange = ezplot::cb_color("orange")
         
         # create function to do scatter plot
         plt = ezplot::mk_scatterplot(dat)
