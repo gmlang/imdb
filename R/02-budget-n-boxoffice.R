@@ -6,15 +6,10 @@
 plot_budget_n_boxoffice = function() {
         t0 = proc.time()
         
-        # get color-blind friendly colors
-        cbPalette = ezplot::cb_color("cb_gray")
-        purple = ezplot::cb_color("reddish_purple")
-        green = ezplot::cb_color("bluish_green")
-        
         # create function to do boxplot 
         plt = ezplot::mk_boxplot(dat)
-        start = min(dat$year)
-        end = max(dat$year)
+        # start = min(dat$year)
+        # end = max(dat$year)
         
         # plot distributions of budget over the years
         title1 = "Distribution of Budget (1913 - 2014)"
