@@ -4,7 +4,7 @@ options(devtools.desc.author="'Guangming Lang <gmlang@cabaceo.com> [aut, cre]'")
 options(devtools.desc.license="MIT")
 
 # set paths
-proj_path = file.path("~/Apps")
+proj_path = file.path("~/Apps/openCPU-apps")
 setwd(file.path(proj_path, "imdb"))
 
 # add Imports
@@ -20,7 +20,7 @@ file.edit("DESCRIPTION")
 document()
 
 # install local package
-install.packages("~/Apps/imdb", repos=NULL, type="source")
+install.packages("~/Apps/openCPU-apps/imdb", repos=NULL, type="source")
 library(imdb)
 
 

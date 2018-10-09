@@ -1,55 +1,40 @@
 #' @title Generate descriptive plots for ratings and votes per rating
-#' 
+#'
 #' @return 2 ggplot2 objects
 #' @export
 plot_length_n_mpaa = function() {
         t0 = proc.time()
-        
-        # get color-blind friendly colors
-        purple = ezplot::cb_color("reddish_purple")
-        green = ezplot::cb_color("bluish_green")
-        red = ezplot::cb_color("vermilion")
-        blue = ezplot::cb_color("blue")
-        
+
         # plot histogram to show the distribution of lengths
-        plt = ezplot::mk_distplot(dat)
-        title1 = "Distribution of Film Lengths"
-        p = plt("length", xlab="minutes", main=title1, add_vline_mean=T)
-        p = ezplot::scale_axis(p, "y", scale="comma")
+        plt = ezplot::mk_histogram(dat)
+        p = plt("length")
+        p = ezplot::add_labs(p, xlab = "Minutes",
+                             title = "Distribution of film lengths")
         p = ezplot::web_display(p)
         print(p)
-        
+
         # plot distribution of mpaa ratings
-        tbl = table(dat$mpaa)
-        tbl = data.frame(prop.table(tbl))
-        names(tbl) = c("cat", "pct")
-        f = ezplot::add_bar_label_pos(tbl)
-        tbl = f("cat", "pct", vpos=0.03)
-        plt = ezplot::mk_barplot(tbl)
-        title2 = "Percent of Different MPAA Ratings"
-        p = plt("cat", "pct", fillby="cat", main=title2, legend=F,
-                barlab="pct", barlab_use_pct=T, decimals=2,
-                barlab_at_top=T, barlab_size=6)
-        p = p + ggplot2::scale_fill_manual(values = c(purple, green, red, blue))
-        p = ezplot::scale_axis(p, "y", scale="pct", pct_jump=0.25)
+        plt = ezplot::mk_barplot_freq(dat)
+        p = plt("mpaa", show_pct = T)
+        p = ezplot::add_labs(p, title = "Distribution of MPAA ratings")
         p = ezplot::web_display(p)
         print(p)
-                
+
         # calculate total time
         dur = proc.time() - t0
         names(dur) = NULL
         runtime = dur[3]
-        
+
         # create data.frame to hold message and run time
         stats = data.frame(tab="length-n-mpaa", msg="success", seconds=runtime)
-        
+
         # create data.frame to hold plots title and index
         plt_titles = c(title1, title2)
         plt_tabs = c("Film Lengths", "MPAA")
-        plts = data.frame(tab=plt_tabs, title=plt_titles, 
+        plts = data.frame(tab=plt_tabs, title=plt_titles,
                           n=1:2, has_caption=FALSE, caption="")
-        
+
         # collect into out
         out = list(status=stats, tables=list(), plots=plts, prints=list())
-        return(out)                
+        return(out)
 }
